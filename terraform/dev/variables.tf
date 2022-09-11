@@ -18,6 +18,11 @@ variable btn_chart   {
   description = "btn helm chart name"
 }
 
+variable btn_chart_version {
+  type        = string
+  description = "btn helm chart version"
+}
+
 variable btn_host {
   type        = string
   description = "btn host"

@@ -10,7 +10,7 @@ resource "helm_release" "btn" {
   repository                  = var.btn_repository
   chart                       = var.btn_chart
   namespace                   = var.namespace
-  version                     = "0.1.5"
+  version                     = var.btn_chart_version
   create_namespace            = true
 }
 
