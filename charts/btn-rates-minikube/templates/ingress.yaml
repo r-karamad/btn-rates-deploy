@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "btn-rates-minikube.fullname" . }}
+  namespace: {{ .Release.Namespace | quote }}
+  labels:
+    {{- include "btn-rates-minikube.labels" . | nindent 4 }}
+spec:
+  rules:
+    - host: {{ .Values.ingress.btn.host }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ include "btn-rates-minikube.fullname" . }}
+                port: 
+                  number: {{ .Values.service.port }}
