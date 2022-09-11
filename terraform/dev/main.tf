@@ -5,17 +5,13 @@ data "kubernetes_service" "ingress_svc" {
   }
 }
 
-resource "kubernetes_namespace" "playground" {
-  metadata {
-    name = "playground"
-  }
-}
-
 resource "helm_release" "btn" {
   name                        = var.btn_release_name
   repository                  = var.btn_repository
   chart                       = var.btn_chart
   namespace                   = var.namespace
+  version                     = "0.1.5"
+  create_namespace            = true
 }
 
 output "homepage_http" {
