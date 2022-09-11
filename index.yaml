@@ -1,3 +1,14 @@
 apiVersion: v1
-entries: {}
-generated: "2022-09-11T11:18:58.759709164+02:00"
+entries:
+  btn-rates-minikube:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2022-09-11T11:23:50.995249487+02:00"
+    description: A Helm chart for deploying btn-rates application into minikube
+    digest: 01797119d06a9b48d67d999f59e986e5e7544f89cd6d10d8fb8bc76357a9e586
+    name: btn-rates-minikube
+    type: application
+    urls:
+    - btn-rates-minikube-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-09-11T11:23:50.994887539+02:00"
