@@ -3,6 +3,16 @@ entries:
   btn-rates-minikube:
   - apiVersion: v2
     appVersion: 0.1.0
+    created: "2022-09-11T14:45:04.347692915Z"
+    description: A Helm chart for deploying btn-rates application into minikube
+    digest: 85faa8d022cd0bc92c5baa13649c6c3447fbb9c9fbc7cfa97749f79ed0d5aa9b
+    name: btn-rates-minikube
+    type: application
+    urls:
+    - https://github.com/r-karamad/btn-rates-deploy/releases/download/btn-rates-minikube-0.1.1/btn-rates-minikube-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 0.1.0
     created: "2022-09-11T11:23:50.995249487+02:00"
     description: A Helm chart for deploying btn-rates application into minikube
     digest: 01797119d06a9b48d67d999f59e986e5e7544f89cd6d10d8fb8bc76357a9e586
@@ -11,4 +21,4 @@ entries:
     urls:
     - btn-rates-minikube-0.1.0.tgz
     version: 0.1.0
-generated: "2022-09-11T11:23:50.994887539+02:00"
+generated: "2022-09-11T14:45:04.347702115Z"
