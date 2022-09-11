@@ -1,0 +1,5 @@
+namespace  = "playground"
+btn_release_name = "app"
+btn_repository = "https://r-karamad.github.io/btn-rates-deploy/"
+btn_chart = "btn-rates-minikube"
+btn_host = "rates.cluster.local"
