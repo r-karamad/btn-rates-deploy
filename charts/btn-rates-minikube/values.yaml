@@ -1,0 +1,6 @@
+deployment:
+  replicaCount: 2
+  image:
+    repository: karamad/btn-rates
+    tag: "latest"
+  targetPort: 8000

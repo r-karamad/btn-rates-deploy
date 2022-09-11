@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "btn-rates-minikube.fullname" . }}
+  namespace: {{ .Release.Namespace | quote }}
+  labels:
+    {{- include "btn-rates-minikube.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.deployment.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "btn-rates-minikube.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "btn-rates-minikube.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.deployment.image.repository }}:{{ .Values.deployment.image.tag }}"
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
