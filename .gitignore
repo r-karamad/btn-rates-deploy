@@ -8,6 +8,7 @@ minikube_ip
 terraform/devlopment/.terraform/
 *.terraform*
 *.tfstate
+*.tfstate.backup
 
 # Crash log files
 crash.log
