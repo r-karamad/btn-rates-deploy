@@ -11,13 +11,18 @@ else
   echo "👍 kubectl is already installed!"
 fi
 
-if ! [ -x "$(command -v kvm)" ]; then
-  echo "Installing kvm ..."
-  sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virtinst virt-manager
-  sudo usermod -aG libvirt $USER
-  sudo usermod -aG kvm $USER
+if ! [ -x "$(command -v docker)" ]; then
+  echo "Installing docker ..."
+  sudo apt update
+  sudo apt install apt-transport-https ca-certificates curl software-properties-common
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+  apt-cache policy docker-ce
+  sudo apt install docker-ce
+  sudo usermod -aG docker ${USER}
+  su - ${USER}
 else
-  echo "👍 kvm is already installed!"
+  echo "👍 docker is already installed!"
 fi
 
 if ! [ -x "$(command -v minikube)" ]; then
@@ -32,6 +37,7 @@ echo "Configuring minikube ..."
 minikube config set cpus 2
 minikube config set memory 1g
 minikube config set disk-size 2g
+minikube config set driver docker
 minikube config set EmbedCerts true
 
 echo "Starting minikube ..."
@@ -41,9 +47,3 @@ kubectl cluster-info
 
 echo "Setting /etc/hosts ..."
 minikube ip > minikube_ip
-
-echo "Setting /etc/hosts ..."
-minikube_ip=$(cat minikube_ip)
-sudo sed -i '/app.cluster.local/d' /etc/hosts
-sudo echo $minikube_ip app.cluster.local >> /etc/hosts
-echo "👍 done."
