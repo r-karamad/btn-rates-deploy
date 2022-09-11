@@ -29,4 +29,4 @@ terraform plan
 terraform apply --auto-approve
 ```
 4. URL
-https://rates.cluster.local:<PORT>
+- https://rates.cluster.local:<PORT>
