@@ -31,14 +31,19 @@ fi
 echo "Configuring minikube ..."
 minikube config set cpus 2
 minikube config set memory 1g
-minikube config set disk-size 5g
+minikube config set disk-size 2g
 minikube config set EmbedCerts true
-minikube config set driver kvm2
 
 echo "Starting minikube ..."
-minikube start --nodes=3
+minikube start --nodes=2
 minikube addons enable ingress
 kubectl cluster-info
 
 echo "Setting /etc/hosts ..."
 minikube ip > minikube_ip
+
+echo "Setting /etc/hosts ..."
+minikube_ip=$(cat minikube_ip)
+sudo sed -i '/app.cluster.local/d' /etc/hosts
+sudo echo $minikube_ip app.cluster.local >> /etc/hosts
+echo "👍 done."
