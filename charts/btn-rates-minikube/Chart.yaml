@@ -2,5 +2,5 @@ apiVersion: v2
 name: btn-rates-minikube
 description: A Helm chart for deploying btn-rates application into minikube
 type: application
-version: 0.1.6
+version: 0.1.5
 appVersion: "0.1.0"
