@@ -28,3 +28,7 @@ terraform init
 terraform plan
 terraform apply --auto-approve
 ```
+4. URL
+```
+https://rates.cluster.local:<PORT>
+```
