@@ -20,6 +20,7 @@ variable btn_chart   {
 
 variable btn_chart_version {
   type        = string
+  default     = ""
   description = "btn helm chart version"
 }
 
