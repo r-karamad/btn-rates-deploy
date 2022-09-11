@@ -29,5 +29,5 @@ terraform plan
 terraform apply --auto-approve
 ```
 4. URL
-K8s ingress resource is deployed to forwarding requests. The below host selected and the port number needs to be placed due to the ingress controller inside K8s.
-- 'https' or 'http'://rates.cluster.local:'port'
+K8s ingress resource is deployed to forwarding requests. The below hostname selected and the port number needs to be placed due to the ingress controller inside K8s.
+- rates.cluster.local
