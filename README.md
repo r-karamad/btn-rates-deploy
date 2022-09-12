@@ -21,7 +21,7 @@ git clone https://github.com/r-karamad/btn-rates-deploy.git && cd btn-rates-depl
 ./prepare.sh
 sudo ./etchosts.sh
 ```
-3. Apply terraform
+3. Apply terraform: it will use helm chart to apply the config.
 ```
 cd terraform/dev/
 terraform init
@@ -31,8 +31,7 @@ terraform apply --auto-approve
 4. URL
 K8s ingress resource is deployed to forwarding requests. The below hostname selected and the port number needs to be placed due to the ingress controller inside K8s. As an example:
 - https://rates.cluster.local:31982/
-5. Helming Manually <br>
-Add the helm repo
+5. Helming manually: add the helm repo
 ```
 helm repo add btn https://r-karamad.github.io/btn-rates-deploy/
 ```
