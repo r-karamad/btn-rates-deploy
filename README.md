@@ -29,5 +29,22 @@ terraform plan
 terraform apply --auto-approve
 ```
 4. URL
-K8s ingress resource is deployed to forwarding requests. The below hostname selected and the port number needs to be placed due to the ingress controller inside K8s.
-- rates.cluster.local
+K8s ingress resource is deployed to forwarding requests. The below hostname selected and the port number needs to be placed due to the ingress controller inside K8s. As an example:
+- https://rates.cluster.local:31982/
+5. Helming Manually
+Add the helm repo
+```
+helm repo add btn https://r-karamad.github.io/btn-rates-deploy/
+```
+Verify helm repo
+```
+helm repo ls
+```
+Update helm repo
+```
+helm repo update
+```
+Upgrade helm release
+```
+helm upgrade <release_name> <helm_repo> --namespace <release_namespace>
+```
