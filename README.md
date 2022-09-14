@@ -52,7 +52,7 @@ helm upgrade <release_name> <helm_repo> --namespace <release_namespace>
 ```
 cd terraform/prod
 ```
-Run terraform: \
+Run terraform: 
 ```
 terraform init
 terraform plan
