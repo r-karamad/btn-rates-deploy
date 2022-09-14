@@ -63,3 +63,6 @@ terraform apply
 ```
 aws eks --region <region> update-kubeconfig --name <cluster_name>
 ```
+## TODO
+- Write a chart for AWS EKS like we did for Minikube
+- Put EKS terraform state file into S3 buckets as best practice
