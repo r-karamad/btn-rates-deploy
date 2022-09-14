@@ -1,11 +1,12 @@
 # Bitcoin to Currency Exchange Rates Deployment
 This repo contains a solution for deploying btn-rates application into minikube.
 
-## Tools
+## Solutions
 - Terraform
 - Helm
 - Shell
-- Minikube
+- Minikube for development
+- AWS EKS for production 
 
 # How to package charts
 - Pushes your changes into 'main' branch.
@@ -46,4 +47,19 @@ helm repo update
 Upgrade helm release
 ```
 helm upgrade <release_name> <helm_repo> --namespace <release_namespace>
+```
+# How to setup AWS EKS
+```
+cd terraform/prod
+```
+Run terraform: \
+```
+terraform init
+terraform plan
+terraform apply
+```
+
+## How to update kubectl config file
+```
+aws eks --region <region> update-kubeconfig --name <cluster_name>
 ```
