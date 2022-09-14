@@ -64,6 +64,6 @@ terraform apply
 aws eks --region <region> update-kubeconfig --name <cluster_name>
 ```
 ## TODO
-- Write terraform codes and helm chart for for setting up the service in AWS EKS cluster like we did for Minikube
+- Write terraform codes and helm chart for for setting up the service in AWS EKS cluster like we did for set up in Minikube
 - Put EKS terraform state file into S3 buckets as best practice
 - Pushing helm charts to artifiact repostories like ChartMuseum or ArtifactHub
